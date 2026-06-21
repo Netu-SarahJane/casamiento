@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarah Jane & Netu · 30.08.2026</title>
+  <meta name="description" content="Casamiento de Sarah Jane y Netu - 30.08.2026" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f7f0e6;
+      --paper: #fffdf8;
+      --ink: #1f1d1a;
+      --muted: #7c6d60;
+      --gold: #b99a63;
+      --gold-light: #e8d4a8;
+      --sand: #e7d9c6;
+      --shadow: 0 24px 60px rgba(60,45,30,.18);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Montserrat, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── FONDO ── */
+    .bg {
+      position: fixed; inset: 0; z-index: -2;
+      background: radial-gradient(circle at 20% 10%, rgba(255,255,255,.85), transparent 30%),
+                  linear-gradient(135deg, #fbf7ef, #e7d6bf 65%, #d0b189);
+    }
+    .bg::after {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: url('images/foto5.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: .15;
+      filter: blur(2px) saturate(.8);
+    }
+
+    /* ── MÚSICA ── */
+    #ytPlayer { position: absolute; left: -9999px; width: 1px; height: 1px; }
+
+    .music-btn {
+      position: fixed; right: 20px; bottom: 20px; z-index: 100;
+      width: 52px; height: 52px;
+      background: var(--ink);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 26px rgba(0,0,0,.22);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .2s, background .2s;
+    }
+    .music-btn:hover { transform: scale(1.08); background: #3a2a18; }
+    .music-btn.playing { background: var(--gold); }
+    .music-btn .icon-note { display: block; }
+    .music-btn .icon-pause { display: none; }
+    .music-btn.playing .icon-note { display: none; }
+    .music-btn.playing .icon-pause { display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 54px 18px 80px;
+    }
+    .paper-wrap {
+      width: min(92vw, 600px);
+      padding: 18px;
+      background: rgba(255,255,255,.5);
+      box-shadow: var(--shadow);
+      transform: rotate(-.7deg);
+    }
+    .paper {
+      background: var(--paper);
+      padding: 40px 32px;
+      border: 3px solid #2c2925;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background-image: radial-gradient(rgba(0,0,0,.03) 1px, transparent 1px);
+      background-size: 4px 4px;
+    }
+    .bsd {
+      position: absolute; top: 22px; right: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+    }
+    .pasuk {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .invite {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      color: #3b3732;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .monogram {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 100px;
+      line-height: .85;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      margin: 28px 0 16px;
+    }
+    .monogram .divider {
+      height: 120px;
+      border-left: 2px solid #2c2925;
+    }
+    .names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #2c2925, transparent);
+      width: 70%;
+      margin: 16px auto;
+    }
+    .date-main {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .date-heb {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .small {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 4px;
+    }
+    .heart { font-size: 24px; margin-top: 14px; color: #a52a20; }
+
+    .enter-btn {
+      margin-top: 24px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      border-radius: 999px;
+      padding: 14px 28px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: Montserrat, sans-serif;
+      transition: background .2s;
+    }
+    .enter-btn:hover { background: #3a2a18; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 18px; }
+    .container { max-width: 1000px; margin: auto; }
+
+    .card {
+      background: rgba(255,253,248,.88);
+      border: 1px solid rgba(185,154,99,.2);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      box-shadow: 0 14px 40px rgba(60,45,30,.08);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .lead {
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    /* ── COUNTDOWN ── */
+    .count {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .count-item {
+      background: #fffaf1;
+      border: 1px solid var(--sand);
+      border-radius: 18px;
+      text-align: center;
+      padding: 22px 10px 16px;
+    }
+    .count-item strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .count-item span {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── EVENTS ── */
+    .events {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .event h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .event p { color: var(--muted); line-height: 1.8; font-size: 15px; }
+    .btn {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      color: #3a2a18;
+      text-decoration: none;
+      background: #fff7e9;
+      font-size: 13px;
+      letter-spacing: .5px;
+      transition: background .2s;
+    }
+    .btn:hover { background: var(--gold-light); }
+
+    /* ── REGALO ── */
+    .gift { text-align: center; max-width: 680px; margin: auto; }
+    .gift p { color: var(--muted); line-height: 1.9; font-size: 15px; margin-bottom: 10px; }
+    .bank { margin-top: 22px; display: grid; gap: 10px; }
+    .bank-item {
+      background: #fff7e9;
+      border: 1px solid #e2cda9;
+      border-radius: 14px;
+      padding: 14px 18px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 14px;
+      transition: background .15s;
+      position: relative;
+    }
+    .bank-item:hover { background: var(--gold-light); }
+    .bank-item .copy-hint {
+      position: absolute; right: 14px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: .5px;
+    }
+
+    /* ── GALERÍA ── */
+    .gallery {
+      columns: 2 280px;
+      column-gap: 14px;
+      margin-top: 8px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 0 14px;
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.08);
+      break-inside: avoid;
+    }
+
+    /* ── RSVP ── */
+    .rsvp-form { display: grid; gap: 13px; max-width: 560px; margin: auto; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 15px 18px;
+      border: 1.5px solid #d7c5ad;
+      border-radius: 14px;
+      background: #fffdf8;
+      font: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      transition: border-color .2s;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    textarea { min-height: 90px; resize: vertical; }
+
+    .submit-btn {
+      background: var(--ink);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 16px;
+      cursor: pointer;
+      font-family: Montserrat, sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background .2s;
+    }
+    .submit-btn:hover { background: #3a2a18; }
+    .submit-btn:disabled { background: var(--muted); cursor: not-allowed; }
+
+    .form-msg {
+      display: none;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: #3a2a18;
+      margin-top: 16px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 18px 70px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .5px;
+    }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed;
+      bottom: 80px; right: 20px;
+      background: var(--ink);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      opacity: 0;
+      transition: opacity .3s;
+      z-index: 200;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 760px) {
+      section { padding: 56px 16px; }
+      .paper { min-height: 560px; padding: 30px 20px; }
+      .monogram { font-size: 72px; }
+      .names { font-size: 24px; }
+      .date-main { font-size: 18px; }
+      .count { grid-template-columns: repeat(2, 1fr); }
+      .events { grid-template-columns: 1fr; }
+      .gallery { columns: 1; }
+      h2 { font-size: 38px; }
+      .card { padding: 28px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div id="ytPlayer"></div>
+<audio id="localAudio" src="musica.mp3" loop preload="auto"></audio>
+<div class="toast" id="toast"></div>
+
+<!-- Botón flotante de música -->
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Música">
+  <span class="icon-note">♪</span>
+  <span class="icon-pause">⏸</span>
+</button>
+
+<!-- ── HERO ── -->
+<section class="hero" onclick="tryAutoPlay()">
+  <div class="paper-wrap">
+    <div class="paper">
+      <div class="bsd">בס״ד</div>
+      <div class="pasuk">אֲנִי לְדוֹדִי וְדוֹדִי לִי</div>
+      <p class="invite">Nos sentiremos muy felices de celebrar con ustedes nuestro casamiento</p>
+      <div class="monogram">
+        <span>SJ</span>
+        <span class="divider"></span>
+        <span>N</span>
+      </div>
+      <div class="names">Sarah Jane &amp; Netu</div>
+      <div class="line"></div>
+      <div class="date-main">30 · 08 · 2026</div>
+      <div class="date-heb">17 de Elul 5786</div>
+      <div class="line"></div>
+      <p class="small"><b>Jupá · 12:00 hs</b><br>Gran Templo Shaare Sion<br>Helguera 465, CABA</p>
+      <div class="heart">♥</div>
+      <button class="enter-btn" onclick="event.stopPropagation(); tryAutoPlay(); document.getElementById('info').scrollIntoView({behavior:'smooth'})">
+        Entrar a nuestra invitación
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ── COUNTDOWN ── -->
+<section id="info">
+  <div class="container card">
+    <h2>Falta muy poquito</h2>
+    <div class="count" id="countdown">
+      <div class="count-item"><strong>--</strong><span>Días</span></div>
+      <div class="count-item"><strong>--</strong><span>Horas</span></div>
+      <div class="count-item"><strong>--</strong><span>Min</span></div>
+      <div class="count-item"><strong>--</strong><span>Seg</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EVENTOS ── -->
+<section>
+  <div class="container events">
+    <div class="card event">
+      <h3>Jupá</h3>
+      <p><b>12:00 hs</b><br>Gran Templo Shaare Sion<br>Helguera 465, CABA</p>
+      <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gran+Templo+Shaare+Sion+Helguera+465+CABA">Cómo llegar ↗</a>
+    </div>
+    <div class="card event">
+      <h3>Fiesta</h3>
+      <p><b>Salón Ombú</b><br>Golden Center, Parque Norte<br>Av. Cantilo y Av. Güiraldes, CABA</p>
+      <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Salon+Ombu+Golden+Center+Parque+Norte+CABA">Cómo llegar ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── REGALO ── -->
+<section>
+  <div class="container card">
+    <div class="gift">
+      <h2>Che o Wey</h2>
+      <p>El mejor regalo es compartir este día con ustedes.</p>
+      <p>Pero como todavía no logramos ponernos de acuerdo entre el <b>che</b> y el <b>wey</b>,
+      el <b>mate</b> y los <b>tacos</b>, Buenos Aires y Ciudad de México...</p>
+      <p>cuando finalmente lo resolvamos, prometemos contarles.</p>
+      <p>Mientras tanto, si desean acompañarnos también en este nuevo comienzo, pueden hacerlo aquí:</p>
+      <div class="bank">
+        <div class="bank-item" onclick="copyText('hilunetu.mp')">
+          <b>Alias:</b> hilunetu.mp
+          <span class="copy-hint">Copiar</span>
+        </div>
+        <div class="bank-item" onclick="copyText('0000003100031134720049')">
+          <b>CVU:</b> 0000003100031134720049
+          <span class="copy-hint">Copiar</span>
+        </div>
+        <div class="bank-item" style="cursor:default;">
+          <b>Titular:</b> Jaim Netanel Hilu
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALERÍA ── -->
+<section>
+  <div class="container">
+    <h2>Nuestra historia en imágenes</h2>
+    <div class="gallery">
+      <img src="images/foto1.jpg" alt="Sarah Jane y Netu">
+      <img src="images/foto2.jpg" alt="Sarah Jane y Netu">
+      <img src="images/foto3.jpg" alt="Sarah Jane y Netu">
+      <img src="images/foto4.jpg" alt="Sarah Jane y Netu">
+      <img src="images/foto5.jpg" alt="Sarah Jane y Netu">
+      <img src="images/foto6.jpg" alt="Sarah Jane y Netu">
+    </div>
+  </div>
+</section>
+
+<!-- ── RSVP ── -->
+<section>
+  <div class="container card rsvp">
+    <h2>Confirmar asistencia</h2>
+    <p class="lead" id="guestGreeting" style="margin-bottom:28px">Esta invitación es personal.</p>
+
+    <div class="rsvp-form" id="rsvpForm">
+      <input id="f-invitado" type="hidden">
+
+      <select id="f-asiste" required>
+        <option value="">¿Vas a asistir?</option>
+        <option value="Sí, ahí estaré">Sí, ahí estaré 🎉</option>
+        <option value="No podré asistir">No podré asistir</option>
+      </select>
+
+      <input id="f-cantidad" type="number" min="1" max="20" value="1" placeholder="Cantidad de asistentes">
+
+      <select id="f-restriccion" required>
+        <option value="Ninguna">Restricción alimentaria: ninguna</option>
+        <option value="Vegetariano/a">Vegetariano/a</option>
+        <option value="Celíaco/a">Celíaco/a</option>
+        <option value="Vegano/a">Vegano/a</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <textarea id="f-comentarios" placeholder="Comentarios / aclaraciones"></textarea>
+      <button class="submit-btn" id="submitBtn" onclick="sendRSVP()">Enviar confirmación</button>
+    </div>
+
+    <p class="form-msg" id="formMsg">
+      ¡Gracias, recibimos tu confirmación con mucho amor! ♥
+    </p>
+  </div>
+</section>
+
+<footer>
+  Sarah Jane &amp; Netu · 30 de agosto de 2026 · 17 de Elul de 5786
+</footer>
+
+<script>
+/* ════════════════════════════════════
+   MÚSICA LOCAL MP3
+   Archivo esperado: musica.mp3 en la misma carpeta que este index
+   ════════════════════════════════════ */
+const audio = document.getElementById('localAudio');
+let isPlaying = false;
+
+audio.volume = 0.65;
+
+function tryAutoPlay() {
+  // Los navegadores no siempre permiten autoplay; se activa con el primer clic.
+  if (!isPlaying) toggleMusic();
+}
+
+function toggleMusic() {
+  const btn = document.getElementById('musicBtn');
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play().then(() => {
+      isPlaying = true;
+      btn.classList.add('playing');
+    }).catch(() => {
+      showToast('Tocá de nuevo para activar la música');
+    });
+  } else {
+    audio.pause();
+    isPlaying = false;
+    btn.classList.remove('playing');
+  }
+}
+
+function updateMusicBtn() {
+  const btn = document.getElementById('musicBtn');
+  if (isPlaying) btn.classList.add('playing');
+  else btn.classList.remove('playing');
+}
+
+/* ════════════════════════════════════
+   COUNTDOWN
+   ════════════════════════════════════ */
+const weddingDate = new Date('2026-08-30T12:00:00-03:00');
+
+function tick() {
+  const now = new Date();
+  let diff = weddingDate - now;
+  if (diff < 0) diff = 0;
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor(diff % 86400000 / 3600000);
+  const mins  = Math.floor(diff % 3600000  / 60000);
+  const secs  = Math.floor(diff % 60000    / 1000);
+  document.getElementById('countdown').innerHTML = `
+    <div class="count-item"><strong>${days}</strong><span>Días</span></div>
+    <div class="count-item"><strong>${hours}</strong><span>Horas</span></div>
+    <div class="count-item"><strong>${mins}</strong><span>Min</span></div>
+    <div class="count-item"><strong>${secs}</strong><span>Seg</span></div>
+  `;
+}
+tick();
+setInterval(tick, 1000);
+
+
+/* ════════════════════════════════════
+   COPY TO CLIPBOARD
+   ════════════════════════════════════ */
+function copyText(t) {
+  navigator.clipboard.writeText(t).then(() => showToast('Copiado: ' + t));
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+
+/* ════════════════════════════════════
+   RSVP → GOOGLE SHEETS · VERSIÓN PRO
+   Cada invitado recibe un link así:
+   index.html?invitado=Abad%20Diana
+   ════════════════════════════════════ */
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycybMwD2XdofkS4zmuwm-2FvZbLZJjo2AFRUEQg2f5w6UeLJdwZg3GyZAHopQAKCuImPcTw/exec';
+
+function getGuestFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const value = params.get('invitado') || params.get('nombre') || '';
+  return value.trim();
+}
+
+const INVITADO = getGuestFromUrl();
+
+window.addEventListener('DOMContentLoaded', () => {
+  const greeting = document.getElementById('guestGreeting');
+  const hidden = document.getElementById('f-invitado');
+  const form = document.getElementById('rsvpForm');
+
+  if (INVITADO) {
+    hidden.value = INVITADO;
+    greeting.innerHTML = `<b>${INVITADO}</b><br>Nos sentiremos muy felices de contar con tu presencia.`;
+  } else {
+    greeting.innerHTML = 'Este link no tiene invitado asignado. Pedile a Sarah Jane que te mande tu invitación personalizada ♥';
+    form.style.display = 'none';
+  }
+});
+
+async function sendRSVP() {
+  const invitado    = document.getElementById('f-invitado').value.trim();
+  const confirmo    = document.getElementById('f-asiste').value;
+  const cantidad    = document.getElementById('f-cantidad').value || '1';
+  const restriccion = document.getElementById('f-restriccion').value;
+  const comentarios = document.getElementById('f-comentarios').value.trim();
+
+  if (!invitado || !confirmo) {
+    showToast('Por favor confirmá si vas a asistir.');
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+
+  const params = new URLSearchParams({ invitado, confirmo, cantidad, restriccion, comentarios });
+
+  try {
+    await fetch(SHEETS_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
+    showSuccess();
+  } catch (err) {
+    showToast('Hubo un error. Por favor intentá de nuevo.');
+    btn.disabled = false;
+    btn.textContent = 'Enviar confirmación';
+  }
+}
+
+function showSuccess() {
+  document.getElementById('rsvpForm').style.display = 'none';
+  document.getElementById('formMsg').style.display  = 'block';
+}
+</script>
+</body>
+</html>
