@@ -665,7 +665,7 @@ function jsonpRequest(paramsObj) {
       reject(new Error('No se pudo conectar'));
     };
 
-    document.body.appendChild(script);
+ (document.head || document.documentElement).appendChild(script);
   });
 }
 
