@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sarah Jane y Netanel//Casamiento//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:casamiento-sarah-jane-netanel-20260830@sarahnetanel
+DTSTAMP:20260705T000000Z
+DTSTART:20260830T150000Z
+DTEND:20260831T025900Z
+SUMMARY:Casamiento de Sarah Jane y Netanel
+LOCATION:Gran Templo Shaare Sion, Helguera 465, CABA
+DESCRIPTION:Jupá 12:00 hs en Gran Templo Shaare Sion, Helguera 465, CABA. Fiesta en Salón OMBÚ, Golden Center (Parque Norte), Av. Cantilo y Av. Güiraldes, CABA.
+END:VEVENT
+END:VCALENDAR
