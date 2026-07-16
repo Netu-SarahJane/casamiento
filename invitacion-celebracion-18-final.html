@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarah Jane & Netanel · Celebración 18:00 hs</title>
+  <meta name="description" content="Casamiento de Sarah Jane y Netanel - Jupá y celebración desde las 18:00 hs" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ead4b7; --paper:#fff8ee; --paper2:#f7eadb; --ink:#30231c; --muted:#604d3e;
+      --gold:#c89443; --line:#d8a75b; --soft:#ead7bd;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{background:var(--bg);color:var(--ink);font-family:'EB Garamond', Georgia, serif;overflow-x:hidden;-webkit-text-size-adjust:100%}
+    .page{width:100%;background:var(--bg)}
+    .sheet{
+      position:relative; isolation:isolate; width:min(100%,900px); margin:0 auto; overflow:hidden;
+      background:radial-gradient(circle at 50% 15%,#fffdf9 0,#fff9f0 48%,#f7eadb 100%);
+      padding:30px 38px 34px; box-shadow:0 20px 70px rgba(72,49,25,.14);
+    }
+    .content{position:relative;z-index:2;text-align:center}
+    /* Tipografías finales */
+    .intro,.parents,.date,.date-heb,.event h3,.event p,.gift-text,.rsvp-card h2,.form-msg{font-family:'EB Garamond', Georgia, serif}
+    .names{font-family:'Cormorant Garamond', Georgia, serif;font-style:italic;font-weight:500}
+    .logo{font-family:'Alex Brush', cursive}
+    .bsd{position:absolute;top:22px;right:34px;z-index:3;font-size:20px;font-weight:600}
+    .leaf{position:absolute;z-index:1;pointer-events:none;opacity:.96;display:block}
+    .leaf.left{left:-6px;top:0;width:218px}.leaf.right{right:-6px;top:0;width:218px}
+
+    .top-text{padding-top:78px;clear:both}
+    .hebrew{font-size:52px;line-height:1.08;font-weight:700;letter-spacing:.2px;margin:0 auto 10px;white-space:normal;max-width:680px;text-align:center}
+    .pasuk-es{font-size:24px;font-style:italic;margin:0 auto 26px;color:var(--muted);line-height:1.28;max-width:520px;text-wrap:balance}
+    .divider,.wide-line{display:flex;align-items:center;justify-content:center;color:var(--gold)}
+    .divider{gap:28px;margin:8px auto 34px}.divider:before,.divider:after{content:"";width:112px;height:1px;background:var(--line)}
+    .heart{font-size:31px;color:var(--gold);line-height:1}
+    .intro{font-size:28px;line-height:1.22;max-width:560px;margin:0 auto 36px;display:block;clear:both;text-align:center;text-wrap:balance}
+
+    .couple-block{margin-top:0}
+    .top-block{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:26px;margin:0 auto 10px}
+    .parents{font-size:23px;line-height:1.28;text-align:left}.parents.right{text-align:right}
+    .logo{width:210px;height:190px;object-fit:contain;display:block;margin:auto;filter:contrast(1.08)}
+    .names{font-family:'Cormorant Garamond', Georgia, serif;font-style:italic;font-size:52px;line-height:1.02;margin-top:6px;font-weight:500}
+    .date{font-size:28px;letter-spacing:2px;margin-top:17px}.date-heb{font-size:26px;margin-top:5px}
+    .tiny-heart{font-size:28px;color:var(--gold);margin:17px auto 8px}
+
+    .events{display:grid;grid-template-columns:1fr 1px 1fr;gap:42px;align-items:stretch;max-width:720px;margin:12px auto 36px}
+    .vline{background:linear-gradient(transparent,var(--line),transparent)}
+    .event{padding:8px 10px;display:flex;flex-direction:column;align-items:center;height:100%;min-height:300px}.icon{height:90px;margin-bottom:10px;display:flex;align-items:center;justify-content:center}.icon-img{width:108px;max-height:90px;object-fit:contain;display:block}.event p{min-height:104px}.event-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:auto}.mini-link{display:inline-block;border:1px solid rgba(200,148,67,.85);background:#fff8ec;color:#3a2a18;border-radius:999px;padding:8px 13px;text-decoration:none;font-family:Montserrat,Arial,sans-serif;font-size:10.5px;letter-spacing:.7px;text-transform:uppercase;line-height:1}.calendar-link{display:inline-block;margin:10px auto 0;border:1px solid var(--gold);background:#fff8ec;color:#3a2a18;border-radius:999px;padding:10px 18px;text-decoration:none;font-family:Montserrat,Arial,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+    .event h3{font-size:36px;letter-spacing:10px;font-weight:600;margin:2px 0 8px}.event p{font-size:23px;line-height:1.45}.event b{font-weight:700}
+    .wide-line{gap:26px;margin:22px 0 26px}.wide-line:before,.wide-line:after{content:"";height:1px;background:var(--line);flex:1}
+
+    .photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0 auto 32px}
+    .photo-strip img{width:100%;height:365px;display:block;border-radius:12px;background:#f7eadb;object-fit:cover;border:1.5px solid rgba(200,148,67,.72);padding:3px}
+    .photo-strip img.p1{object-position:center center}.photo-strip img.p2{object-position:center center}.photo-strip img.p3{object-position:center center}
+
+    .bottom{display:grid;grid-template-columns:1.18fr 1px 1.45fr;gap:24px;align-items:stretch;margin-top:8px}
+    .gift-title{font-family:'Great Vibes',cursive;font-size:62px;line-height:1;color:#2a1e18;margin-bottom:8px}
+    .gift-text{font-size:19px;line-height:1.43;max-width:355px;margin:auto}
+    .payment{display:grid;grid-template-columns:1fr 1px 1fr;gap:20px}
+    .pay-card{text-align:left}.pay-title{font-family:Montserrat,Arial,sans-serif;background:#ead6bd;border-radius:999px;text-align:center;padding:10px 20px;font-size:17px;letter-spacing:.4px;margin:0 auto 24px;max-width:220px}
+    .pay-line{font-family:Montserrat,Arial,sans-serif;font-size:15px;line-height:1.5;margin:0 0 18px}.pay-line b{display:block;font-size:14px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}.copyable{cursor:pointer}
+    .qr{width:188px;max-width:100%;display:block;margin:0 auto 8px;border-radius:10px;background:white}
+    .confirm-link{display:inline-block;margin-top:22px;border:1px solid var(--gold);background:#fff8ec;color:#3a2a18;border-radius:999px;padding:12px 24px;text-decoration:none;font-family:Montserrat,Arial,sans-serif;font-size:12px;letter-spacing:1.3px;text-transform:uppercase}
+
+    .music-btn{position:fixed;right:16px;bottom:16px;z-index:99;width:46px;height:46px;border-radius:50%;border:0;background:#2c211b;color:#fff;font-size:18px;box-shadow:0 8px 26px rgba(0,0,0,.22);cursor:pointer}.music-btn.playing{background:var(--gold)}.music-btn .icon-pause{display:none}.music-btn.playing .icon-note{display:none}.music-btn.playing .icon-pause{display:block}.toast{position:fixed;bottom:82px;right:18px;background:#2c211b;color:#fff;padding:10px 16px;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:13px;opacity:0;transition:.25s;z-index:100}.toast.show{opacity:1}
+    .rsvp-section{width:min(100%,900px);margin:0 auto;background:linear-gradient(#fff8ee,#f4e4d0);padding:34px 22px 58px}.rsvp-card{max-width:640px;margin:0 auto;background:rgba(255,253,248,.94);border:1px solid rgba(197,150,71,.35);border-radius:26px;padding:34px 26px;box-shadow:0 15px 45px rgba(73,51,26,.1)}.rsvp-card h2{font-size:46px;text-align:center;font-weight:500;letter-spacing:4px;margin-bottom:12px;text-transform:uppercase}.lead{text-align:center;font-family:Montserrat,Arial,sans-serif;color:#6c5a4a;line-height:1.7;font-size:15px}.rsvp-form{display:grid;gap:13px;max-width:560px;margin:24px auto 0}input,select,textarea{width:100%;padding:15px 18px;border:1.5px solid #d7c5ad;border-radius:14px;background:#fffdf8;font-family:Montserrat,Arial,sans-serif;font-size:14px;color:var(--ink);appearance:none}textarea{min-height:90px;resize:vertical}.submit-btn{background:#2c211b;color:#fff;border:0;border-radius:999px;padding:16px;cursor:pointer;font-family:Montserrat,Arial,sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase}.submit-btn:disabled{background:#7c6d60}.form-msg{display:none;text-align:center;font-size:24px;color:#3a2a18;margin-top:18px}footer{width:min(100%,900px);margin:0 auto;text-align:center;background:#f0dcc3;color:#7c6d60;padding:24px 18px 42px;font-family:Montserrat,Arial,sans-serif;font-size:12px}
+
+    @media(max-width:720px){.sheet{padding:24px 18px 36px}.bsd{right:22px;top:18px}.leaf.left{left:-56px;top:-10px;width:174px;opacity:.82}.leaf.right{right:-56px;top:-8px;width:174px;opacity:.82}.top-text{padding-top:64px}.hebrew{font-size:37px;line-height:1.12;max-width:92%}.pasuk-es{font-size:20px;margin-bottom:24px;max-width:88%}.divider{gap:18px;margin-bottom:24px}.divider:before,.divider:after{width:72px}.intro{font-size:22px;line-height:1.22;max-width:330px;margin-bottom:26px}.top-block{grid-template-columns:1fr auto 1fr;gap:7px;align-items:center;max-width:390px;margin-left:auto;margin-right:auto}.parents{font-size:16px;line-height:1.18;text-align:left}.parents.right{text-align:right}.parents.left{order:1}.logo{order:2;width:104px;height:100px;margin:auto}.parents.right{order:3}.names{font-size:39px;margin-top:14px}.date,.date-heb{font-size:23px}.events{gap:18px;max-width:100%;grid-template-columns:1fr 1px 1fr}.event{min-height:286px}.event h3{font-size:28px;letter-spacing:7px}.event p{font-size:16.5px;min-height:86px}.icon{height:64px}.icon-img{width:80px;max-height:64px}.mini-link{font-size:9.5px;padding:7px 10px}.calendar-link{font-size:10px;padding:9px 14px}.photo-strip{gap:8px}.photo-strip img{height:235px;border-radius:7px}.bottom{grid-template-columns:1fr;gap:20px}.bottom>.vline{display:none}.payment{grid-template-columns:1fr 1px 1fr;gap:12px}.gift-title{font-size:54px}.gift-text{font-size:17px}.pay-title{font-size:13px;padding:8px 10px;margin-bottom:16px}.pay-line{font-size:12px}.qr{width:132px}.rsvp-section{padding:28px 14px 46px}.rsvp-card{padding:28px 18px}.rsvp-card h2{font-size:34px}}
+    @media(max-width:430px){.sheet{padding-left:14px;padding-right:14px}.photo-strip{gap:6px}.photo-strip img{height:178px}.hebrew{font-size:32px}.pasuk-es{font-size:18px}.top-block{gap:4px}.parents{font-size:14.2px;line-height:1.15}.logo{width:86px;height:84px}.names{font-size:34px}.events{gap:8px}.event{padding:6px 2px;min-height:252px}.event p{font-size:13.5px;line-height:1.32;min-height:78px}.event h3{font-size:20px;letter-spacing:3px}.icon{height:58px}.icon-img{width:74px;max-height:58px}.payment{grid-template-columns:1fr}.payment>.vline{display:none}.pay-card{text-align:center}.pay-line{text-align:left;max-width:230px;margin-left:auto;margin-right:auto}.gift-text{font-size:16px}.leaf.left{left:-58px;width:168px}.leaf.right{right:-58px;width:168px}}
+
+    @media(max-width:390px){.sheet{padding-left:11px;padding-right:11px}.top-text{padding-top:58px}.hebrew{font-size:29px}.pasuk-es{font-size:16.5px}.intro{font-size:20px}.top-block{grid-template-columns:1fr 78px 1fr;gap:3px}.parents{font-size:12.5px;line-height:1.12}.logo{width:78px;height:76px}.names{font-size:31px}.events{gap:6px}.event{min-height:250px}.event h3{font-size:20px;letter-spacing:3.5px}.event p{font-size:13.3px;min-height:78px}.icon{height:54px}.icon-img{width:70px;max-height:54px}.photo-strip img{height:158px}}
+  </style>
+</head>
+<body>
+<audio id="localAudio" src="https://netu-sarahjane.github.io/casamiento/musica.mp3" loop preload="auto"></audio>
+<div class="toast" id="toast"></div>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Música"><span class="icon-note">♪</span><span class="icon-pause">⏸</span></button>
+<main class="page" onclick="tryAutoPlay()">
+  <section class="sheet" id="inicio">
+    <img class="leaf left" src="https://netu-sarahjane.github.io/casamiento/leaf-left.png" alt="" aria-hidden="true"><img class="leaf right" src="https://netu-sarahjane.github.io/casamiento/leaf-right.png" alt="" aria-hidden="true">
+    <div class="bsd">בס״ד</div>
+    <div class="content">
+      <div class="top-text">
+        <div class="hebrew" dir="rtl">אֲנִי לְדוֹדִי וְדוֹדִי לִי</div>
+        <div class="pasuk-es">Yo soy para mi amado, y mi amado es para mí.</div>
+        <div class="divider"><span class="heart">♡</span></div>
+        <p class="intro">Tenemos la alegría de invitarlos a celebrar nuestro casamiento junto a nuestros padres</p>
+      </div>
+      <div class="couple-block">
+        <div class="top-block">
+          <div class="parents left">Zaki Salem<br>Mimi Falak de Salem</div>
+          <img class="logo" src="https://netu-sarahjane.github.io/casamiento/logo-sn.png" alt="Sarah Jane y Netanel">
+          <div class="parents right">Ariel Hilu<br>Sara Setton de Hilu</div>
+        </div>
+        <div class="names">Sarah Jane &amp; Netanel</div>
+        <div class="date">30 · 08 · 2026</div>
+        <div class="date-heb">17 de Elul 5786</div>
+        <a class="calendar-link" href="https://netu-sarahjane.github.io/casamiento/casamiento-sarah-netanel.ics" onclick="event.stopPropagation()">Agendar fecha</a>
+        <div class="tiny-heart">♡</div>
+      </div>
+      <div class="events">
+        <div class="event"><div class="icon"><img class="icon-img" src="https://netu-sarahjane.github.io/casamiento/jupa.png" alt="Jupá"></div><h3>JUPÁ</h3><p><b>12:00 hs</b><br>Gran Templo Shaare Sion<br>Helguera 465, CABA</p><div class="event-actions"><a class="mini-link" href="https://www.google.com/maps/search/?api=1&query=Gran%20Templo%20Shaare%20Sion%20Helguera%20465%20CABA" target="_blank" rel="noopener" onclick="event.stopPropagation()">Google Maps</a><a class="mini-link" href="https://waze.com/ul?q=Gran%20Templo%20Shaare%20Sion%20Helguera%20465%20CABA&navigate=yes" target="_blank" rel="noopener" onclick="event.stopPropagation()">Waze</a></div></div>
+        <div class="vline"></div>
+        <div class="event"><div class="icon"><img class="icon-img" src="https://netu-sarahjane.github.io/casamiento/fiesta.png" alt="Fiesta"></div><h3>FIESTA</h3><p><b>18:00 hs</b><br><b>Salón OMBÚ</b><br>Golden Center (Parque Norte)<br>Av. Cantilo y Av. Güiraldes, CABA</p><div class="event-actions"><a class="mini-link" href="https://www.google.com/maps/search/?api=1&query=Salon%20OMBU%20Golden%20Center%20Parque%20Norte%20Av.%20Cantilo%20y%20Av.%20Guiraldes%20CABA" target="_blank" rel="noopener" onclick="event.stopPropagation()">Google Maps</a><a class="mini-link" href="https://waze.com/ul?q=Salon%20OMBU%20Golden%20Center%20Parque%20Norte%20Av.%20Cantilo%20y%20Av.%20Guiraldes%20CABA&navigate=yes" target="_blank" rel="noopener" onclick="event.stopPropagation()">Waze</a></div></div>
+      </div>
+      <div class="wide-line"><span class="heart">♡</span></div>
+      <div class="photo-strip"><img class="p1" src="https://netu-sarahjane.github.io/casamiento/foto1.jpg" alt="Sarah Jane y Netanel"><img class="p2" src="https://netu-sarahjane.github.io/casamiento/foto2.jpg" alt="Sarah Jane y Netanel"><img class="p3" src="https://netu-sarahjane.github.io/casamiento/foto3.jpg" alt="Sarah Jane y Netanel"></div>
+      <div class="wide-line"><span class="heart">♡</span></div>
+      <div class="bottom">
+        <div class="gift"><div class="gift-title">Che o Wey</div><div class="heart" style="font-size:24px;margin:6px 0 12px">♡</div><p class="gift-text">El mejor regalo es compartir este día con ustedes.<br>Pero todavía no logramos ponernos de acuerdo entre el che y el wey, el mate y los tacos, Buenos Aires y Ciudad de México...<br>Así que pensamos que lo mejor era no hacerlos participar de nuestras negociaciones.<br>Si quieren regalarnos algo, pueden contribuir a nuestro próximo gran acuerdo: empezar esta nueva etapa juntos.</p><div class="heart" style="font-size:24px;margin-top:12px">♡</div></div>
+        <div class="vline"></div>
+        <div class="payment">
+          <div class="pay-card"><div class="pay-title">MERCADO PAGO</div><div class="pay-line copyable" onclick="event.stopPropagation();copyText('hilunetu.mp')"><b>Alias</b>hilunetu.mp</div><div class="pay-line copyable" onclick="event.stopPropagation();copyText('0000003100031134720049')"><b>CVU</b>0000003100031134720049</div><div class="pay-line"><b>Nombre</b>Jaim Netanel Hilu</div></div>
+          <div class="vline"></div>
+          <div class="pay-card"><div class="pay-title">PAYPAL</div><img class="qr" src="https://netu-sarahjane.github.io/casamiento/paypal-qr.jpg" alt="QR PayPal"></div>
+        </div>
+      </div>
+      <a class="confirm-link" href="#rsvp" onclick="event.stopPropagation();tryAutoPlay()">Confirmar asistencia</a>
+    </div>
+  </section>
+  <section class="rsvp-section" id="rsvp">
+    <div class="rsvp-card">
+      <h2>Confirmar asistencia</h2>
+      <p class="lead">Completá tus datos para confirmar tu presencia.</p>
+      <div class="rsvp-form" id="rsvpForm">
+        <input id="f-nombre" type="text" placeholder="Nombre y apellido" required>
+        <input id="f-telefono" type="tel" placeholder="Teléfono" required>
+        <select id="f-asiste" required>
+          <option value="">¿Van a asistir?</option>
+          <option value="Sí, ahí estaremos">Sí, ahí estaremos 🎉</option>
+          <option value="No podremos asistir">No podremos asistir</option>
+        </select>
+        <input id="f-cantidad" type="number" min="1" max="20" value="1" placeholder="Cantidad de asistentes">
+        <select id="f-restriccion" required>
+          <option value="Ninguna">Restricción alimentaria: ninguna</option>
+          <option value="Vegetariano/a">Vegetariano/a</option>
+          <option value="Celíaco/a">Celíaco/a</option>
+          <option value="Vegano/a">Vegano/a</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <textarea id="f-comentarios" placeholder="Comentarios / aclaraciones"></textarea>
+        <button class="submit-btn" id="submitBtn" onclick="sendOpenRSVP()">Enviar confirmación</button>
+      </div>
+      <p class="form-msg" id="formMsg">¡Gracias, recibimos tu confirmación con mucho amor! ♥</p>
+    </div>
+  </section>
+</main><footer>Sarah Jane &amp; Netanel · 30 de agosto de 2026 · 17 de Elul de 5786</footer>
+<script>
+const audio = document.getElementById('localAudio');
+let isPlaying = false;
+audio.volume = 0.65;
+function tryAutoPlay(){ if(!isPlaying) toggleMusic(); }
+function toggleMusic(){ const btn=document.getElementById('musicBtn'); if(!audio)return; if(audio.paused){ audio.play().then(()=>{isPlaying=true;btn.classList.add('playing');}).catch(()=>showToast('Tocá de nuevo para activar la música')); } else { audio.pause(); isPlaying=false; btn.classList.remove('playing'); } }
+function copyText(t){ navigator.clipboard.writeText(t).then(()=>showToast('Copiado: '+t)); }
+function showToast(msg){ const toast=document.getElementById('toast'); toast.textContent=msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2500); }
+
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxJr2lKnbmfYOGKg4PK4XVpY6opiDFis9Utb4IL_0zS1k3Y1iv75JiTtWWq5wBpMScj/exec';
+
+function jsonpRequest(paramsObj){
+  return new Promise((resolve,reject)=>{
+    const callbackName='jsonp_'+Date.now()+'_'+Math.floor(Math.random()*100000);
+    const params=new URLSearchParams(paramsObj);
+    params.set('callback',callbackName);
+    const script=document.createElement('script');
+    script.src=SHEETS_URL+'?'+params.toString();
+    const timeout=setTimeout(()=>{cleanup();reject(new Error('Tiempo de espera agotado'));},12000);
+    function cleanup(){
+      clearTimeout(timeout);
+      delete window[callbackName];
+      if(script.parentNode) script.parentNode.removeChild(script);
+    }
+    window[callbackName]=(data)=>{cleanup();resolve(data);};
+    script.onerror=()=>{cleanup();reject(new Error('No se pudo conectar'));};
+    document.body.appendChild(script);
+  });
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const asisteSelect=document.getElementById('f-asiste');
+  const cantidadInput=document.getElementById('f-cantidad');
+  asisteSelect.addEventListener('change',()=>{
+    if(asisteSelect.value==='No podremos asistir'){
+      cantidadInput.value=0;
+      cantidadInput.min=0;
+      cantidadInput.disabled=true;
+    }else{
+      cantidadInput.disabled=false;
+      cantidadInput.min=1;
+      if(Number(cantidadInput.value)<1) cantidadInput.value=1;
+    }
+  });
+});
+
+async function sendOpenRSVP(){
+  const nombre=document.getElementById('f-nombre').value.trim();
+  const telefono=document.getElementById('f-telefono').value.trim();
+  const confirmo=document.getElementById('f-asiste').value;
+  const cantidadInput=document.getElementById('f-cantidad');
+  const restriccion=document.getElementById('f-restriccion').value;
+  const comentarios=document.getElementById('f-comentarios').value.trim();
+  let cantidad=Number(cantidadInput.value||0);
+
+  if(!nombre || !telefono || !confirmo){
+    showToast('Completá nombre, teléfono y asistencia.');
+    return;
+  }
+  if(confirmo==='No podremos asistir') cantidad=0;
+  if(confirmo!=='No podremos asistir' && cantidad<1){
+    showToast('Indicá cuántas personas asistirán.');
+    return;
+  }
+
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;
+  btn.textContent='Enviando…';
+
+  try{
+    const data=await jsonpRequest({
+      action:'confirmacion18',
+      nombre,
+      telefono,
+      confirmo,
+      cantidad,
+      restriccion,
+      comentarios
+    });
+    if(data&&data.ok){
+      document.getElementById('rsvpForm').style.display='none';
+      document.getElementById('formMsg').style.display='block';
+    }else{
+      showToast((data&&data.error)?data.error:'Hubo un error. Por favor intentá de nuevo.');
+      btn.disabled=false;
+      btn.textContent='Enviar confirmación';
+    }
+  }catch(err){
+    showToast('Hubo un error. Por favor intentá de nuevo.');
+    btn.disabled=false;
+    btn.textContent='Enviar confirmación';
+  }
+}
+</script>
+</body>
+</html>
