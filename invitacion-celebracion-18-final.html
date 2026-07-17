@@ -128,7 +128,6 @@
       <p class="lead">Completá tus datos para confirmar tu presencia.</p>
       <div class="rsvp-form" id="rsvpForm">
         <input id="f-nombre" type="text" placeholder="Nombre y apellido" required>
-        <input id="f-telefono" type="tel" placeholder="Teléfono" required>
         <select id="f-asiste" required>
           <option value="">¿Van a asistir?</option>
           <option value="Sí, ahí estaremos">Sí, ahí estaremos 🎉</option>
@@ -197,15 +196,14 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 async function sendOpenRSVP(){
   const nombre=document.getElementById('f-nombre').value.trim();
-  const telefono=document.getElementById('f-telefono').value.trim();
   const confirmo=document.getElementById('f-asiste').value;
   const cantidadInput=document.getElementById('f-cantidad');
   const restriccion=document.getElementById('f-restriccion').value;
   const comentarios=document.getElementById('f-comentarios').value.trim();
   let cantidad=Number(cantidadInput.value||0);
 
-  if(!nombre || !telefono || !confirmo){
-    showToast('Completá nombre, teléfono y asistencia.');
+  if(!nombre || !confirmo){
+    showToast('Completá tu nombre y si vas a asistir.');
     return;
   }
   if(confirmo==='No podremos asistir') cantidad=0;
@@ -222,7 +220,6 @@ async function sendOpenRSVP(){
     const data=await jsonpRequest({
       action:'confirmacion18',
       nombre,
-      telefono,
       confirmo,
       cantidad,
       restriccion,
