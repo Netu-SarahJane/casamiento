@@ -92,8 +92,8 @@
       z-index:4;
       display:flex;
       justify-content:center;
-      gap:10px;
-      width:88%;
+      gap:14px;
+      width:100%;
       pointer-events:none;
     }
     /* Posiciones calculadas sobre la imagen final de 852 × 1280 */
@@ -110,8 +110,10 @@
       background:rgba(255,248,236,.96);
       color:#3a2a18;
       border-radius:999px;
-      min-width:142px;
-      padding:10px 17px;
+      width:118px;
+      min-width:118px;
+      height:34px;
+      padding:0;
       text-decoration:none;
       font-family:Montserrat,Arial,sans-serif;
       font-size:10px;
@@ -121,12 +123,15 @@
       box-shadow:0 4px 12px rgba(72,49,25,.08);
     }
     .hero-btn.calendar{
-      display:inline-block;
-      width:auto;
-      min-width:0;
-      padding:5px 8px;
-      font-size:6.5px;
-    }
+  display:inline-flex;
+  width:118px;
+  min-width:118px;
+  height:34px;
+  padding:0;
+  font-size:10px;
+  align-items:center;
+  justify-content:center;
+}
 
     @media(max-width:600px){
       .sheet{padding:0 0 34px}
@@ -137,9 +142,9 @@
         width:calc(100% + 28px);
       }
       .hero-overlay{gap:8px;width:94%}
-      .hero-overlay.calendar{top:60.0%}
-      .hero-overlay.jupa{top:77.3%}
-      .hero-overlay.fiesta{top:95.2%}
+      .hero-overlay.calendar{top:61.2%}
+      .hero-overlay.jupa{top:78.5%}
+      .hero-overlay.fiesta{top:96.2%}
       .hero-btn{
         min-width:0;
         padding:5px 8px;
@@ -147,12 +152,15 @@
         letter-spacing:.25px;
       }
       .hero-btn.calendar{
-        display:inline-block;
-        width:auto;
-        min-width:0;
-        padding:5px 8px;
-        font-size:6.5px;
-      }
+  display:inline-flex;
+  width:118px;
+  min-width:118px;
+  height:34px;
+  padding:0;
+  font-size:10px;
+  align-items:center;
+  justify-content:center;
+
     }
     @media(max-width:600px){
     }
