@@ -97,9 +97,9 @@
       pointer-events:none;
     }
     /* Posiciones calculadas sobre la imagen final de 852 × 1280 */
-    .hero-overlay.calendar{top:60.0%}
-    .hero-overlay.jupa{top:77.3%}
-    .hero-overlay.fiesta{top:95.2%}
+    .hero-overlay.calendar{top:60.4%}
+    .hero-overlay.jupa{top:78.1%}
+    .hero-overlay.fiesta{top:96%}
 
     .hero-btn{
       pointer-events:auto;
@@ -123,14 +123,12 @@
       box-shadow:0 4px 12px rgba(72,49,25,.08);
     }
     .hero-btn.calendar{
-  display:inline-flex;
-  width:118px;
-  min-width:118px;
-  height:34px;
-  padding:0;
-  font-size:10px;
-  align-items:center;
-  justify-content:center;
+  display:inline-block;
+  width:auto;
+  min-width:0;
+  height:auto;
+  padding:11px 20px;
+  font-size:11px;
 }
 
     @media(max-width:600px){
@@ -142,92 +140,28 @@
         width:calc(100% + 28px);
       }
       .hero-overlay{gap:8px;width:94%}
-      .hero-overlay.calendar{top:61.2%}
-      .hero-overlay.jupa{top:78.5%}
-      .hero-overlay.fiesta{top:96.2%}
+      .hero-overlay.calendar{top:60.4%}
+      .hero-overlay.jupa{top:78.1%}
+      .hero-overlay.fiesta{top:96%}
       .hero-btn{
-        min-width:0;
-        padding:5px 8px;
-        font-size:6.5px;
+        
+        padding:9px 14px;
+        font-size:10px;
         letter-spacing:.25px;
       }
-      .hero-btn.calendar{
-  display:inline-flex;
-  width:118px;
-  min-width:118px;
-  height:34px;
-  padding:0;
+     .hero-btn.calendar{
+  display:inline-block;
+  width:auto;
+  min-width:0;
+  height:auto;
+  padding:9px 14px;
   font-size:10px;
-  align-items:center;
-  justify-content:center;
+}
 
     }
     @media(max-width:600px){
     }
-/* AJUSTE FINAL DE TODOS LOS BOTONES */
-.hero-overlay{
-  width:100% !important;
-  gap:10px !important;
-  justify-content:center !important;
-}
 
-.hero-btn,
-.hero-btn.calendar{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  box-sizing:border-box !important;
-  width:112px !important;
-  min-width:112px !important;
-  height:28px !important;
-  padding:0 !important;
-  font-size:8.5px !important;
-  letter-spacing:.35px !important;
-  line-height:1 !important;
-  white-space:nowrap !important;
-}
-
-/* Posición de cada grupo */
-.hero-overlay.calendar{
-  top:60.4% !important;
-}
-
-.hero-overlay.jupa{
-  top:78.1% !important;
-}
-
-.hero-overlay.fiesta{
-  top:96% !important;
-}
-
-@media(max-width:600px){
-  .hero-overlay{
-    width:100% !important;
-    gap:10px !important;
-  }
-
-  .hero-btn,
-  .hero-btn.calendar{
-    width:112px !important;
-    min-width:112px !important;
-    height:28px !important;
-    padding:0 !important;
-    font-size:8.5px !important;
-    letter-spacing:.35px !important;
-  }
-
-  .hero-overlay.calendar{
-    top:60.4% !important;
-  }
-
-  .hero-overlay.jupa{
-    top:78.1% !important;
-  }
-
-  .hero-overlay.fiesta{
-    top:96% !important;
-  }
-}
   </style>
 </head>
 <body>
