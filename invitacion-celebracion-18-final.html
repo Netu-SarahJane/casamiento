@@ -164,7 +164,70 @@
     }
     @media(max-width:600px){
     }
+/* AJUSTE FINAL DE TODOS LOS BOTONES */
+.hero-overlay{
+  width:100% !important;
+  gap:10px !important;
+  justify-content:center !important;
+}
 
+.hero-btn,
+.hero-btn.calendar{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
+  width:112px !important;
+  min-width:112px !important;
+  height:28px !important;
+  padding:0 !important;
+  font-size:8.5px !important;
+  letter-spacing:.35px !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+}
+
+/* Posición de cada grupo */
+.hero-overlay.calendar{
+  top:60.4% !important;
+}
+
+.hero-overlay.jupa{
+  top:78.1% !important;
+}
+
+.hero-overlay.fiesta{
+  top:96% !important;
+}
+
+@media(max-width:600px){
+  .hero-overlay{
+    width:100% !important;
+    gap:10px !important;
+  }
+
+  .hero-btn,
+  .hero-btn.calendar{
+    width:112px !important;
+    min-width:112px !important;
+    height:28px !important;
+    padding:0 !important;
+    font-size:8.5px !important;
+    letter-spacing:.35px !important;
+  }
+
+  .hero-overlay.calendar{
+    top:60.4% !important;
+  }
+
+  .hero-overlay.jupa{
+    top:78.1% !important;
+  }
+
+  .hero-overlay.fiesta{
+    top:96% !important;
+  }
+}
   </style>
 </head>
 <body>
